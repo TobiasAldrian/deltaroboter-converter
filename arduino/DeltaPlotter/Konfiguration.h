@@ -18,7 +18,7 @@
 #include <stdint.h>
 
 // ---- Geometrie: Abstaende der Drehpunkte --------------------------------
-const float OBERARM_A        = 202.0f;  // PLATZHALTER  Motorachse -> Kugelmitten Ellbogen
+const float OBERARM_A        = 200.5f;  // PLATZHALTER  Motorachse -> Kugelmitten Ellbogen
 const float UNTERARM_B       = 440.0f;  // PLATZHALTER  Kugelmitte -> Kugelmitte (Unterarm)
 const float RADIUS_BASIS     = 51.1f;   // PLATZHALTER  Basismitte -> Motorachse (r_B)
 const float RADIUS_PLATTFORM = 53.3f;   // PLATZHALTER  Plattformmitte -> Mitte Gelenkpaar (r_P)

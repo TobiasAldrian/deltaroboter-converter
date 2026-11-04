@@ -97,15 +97,15 @@ Dann einfach `?` eingeben, und der Roboter zeigt Befehle und Modus.
 3. **Nur die Zahl ändern.** Beispiel:
 
    ```cpp
-   const float OBERARM_A        = 202.0f;  // PLATZHALTER  Motorachse -> Kugelmitten Ellbogen
+   const float OBERARM_A        = 200.5f;  // PLATZHALTER  Motorachse -> Kugelmitten Ellbogen
    ```
    wird zu
    ```cpp
-   const float OBERARM_A        = 203.2f;  // gemessen
+   const float OBERARM_A        = 201.7f;  // gemessen
    ```
    Dabei gilt:
-   - **Punkt statt Komma**: `203.2` ✅, `203,2` ❌
-   - Das **`f`** nach der Zahl bleibt stehen (`203.2f`).
+   - **Punkt statt Komma**: `201.7` ✅, `201,7` ❌
+   - Das **`f`** nach der Zahl bleibt stehen (`201.7f`).
    - Der **Strichpunkt `;`** am Ende bleibt stehen.
    - Bei Listen in `{ … }` bleiben die Kommas **zwischen** den Werten: `{183.4f, 177.9f, 181.2f}`
    - Alles nach `//` ist nur ein Kommentar und darf beliebig geändert werden.
@@ -209,23 +209,23 @@ Ohne 12 V findet das Programm keine Motoren und rechnet dann nur.
 
    **Das solltest du sehen:**
    ```
-   Zeichnung 'triangle': 39 Punkte, alle erreichbar. Oberarmwinkel 15.6 .. 46.8 Grad
+   Zeichnung 'triangle': 39 Punkte, alle erreichbar. Oberarmwinkel 15.7 .. 46.9 Grad
    ```
    Das heißt: Alle 39 Punkte des Beispiel-Dreiecks sind erreichbar. Die Oberarme stehen dabei zwischen
-   15,6° und 46,8° unter der Waagrechten.
+   15,7° und 46,9° unter der Waagrechten.
 
 8. `z` + Enter (fährt die Zeichnung ab, hier nur rechnerisch).
 
    **Das solltest du sehen** (läuft in ein paar Sekunden durch, etwa 4000 Zeilen):
    ```
-   Zeichnung 'triangle': 39 Punkte, alle erreichbar. Oberarmwinkel 15.6 .. 46.8 Grad
+   Zeichnung 'triangle': 39 Punkte, alle erreichbar. Oberarmwinkel 15.7 .. 46.9 Grad
    TROCKENLAUF (Motoren bewegen sich nicht):  x  y  z  phi1  phi2  phi3
-   0.00    0.00    50.00   14.94   14.94   14.94
-   -0.02   0.36    49.83   14.99   14.94   15.02
-   -0.03   0.72    49.66   15.03   14.95   15.11
+   0.00    0.00    50.00   14.86   14.86   14.86
+   -0.02   0.36    49.83   14.90   14.86   14.94
+   -0.03   0.72    49.66   14.95   14.86   15.02
    ...
-   0.00    0.36    49.84   14.98   14.94   15.02
-   0.00    0.00    50.00   14.94   14.94   14.94
+   0.00    0.36    49.84   14.90   14.86   14.94
+   0.00    0.00    50.00   14.86   14.86   14.86
    Fertig.
    ```
    Jede Zeile ist ein Zwischenpunkt: `x y z` ist die Stiftposition in mm (A9), `phi1 phi2 phi3` sind die drei Oberarmwinkel.
@@ -381,7 +381,7 @@ Schau **seitlich** auf den Oberarm, genau in Richtung der Motorachse:
 Miss von der **Mitte der Motorwelle** bis zur **Mitte der Kugel** am Ellbogen. Die beiden Kugeln eines Arms sitzen
 nebeneinander, beide haben denselben Abstand. Trag alle 3 Werte ins Messprotokoll ein und bilde den **Mittelwert**.
 
-Bericht: **202 mm**.
+Bericht: **200,5 mm**.
 
 ### 4.4 Unterarm `UNTERARM_B` (alle 6 Stangen messen)
 
@@ -425,14 +425,14 @@ Weicht nur er um weniger als 1 mm ab, beide Werte stehen lassen.
 1. `DeltaPlotter.ino` öffnen (A2), Reiter **`Konfiguration.h`**.
 2. Diese Zeilen findest du ganz oben:
    ```cpp
-   const float OBERARM_A        = 202.0f;  // PLATZHALTER  Motorachse -> Kugelmitten Ellbogen
+   const float OBERARM_A        = 200.5f;  // PLATZHALTER  Motorachse -> Kugelmitten Ellbogen
    const float UNTERARM_B       = 440.0f;  // PLATZHALTER  Kugelmitte -> Kugelmitte (Unterarm)
    const float RADIUS_BASIS     = 51.1f;   // PLATZHALTER  Basismitte -> Motorachse (r_B)
    const float RADIUS_PLATTFORM = 53.3f;   // PLATZHALTER  Plattformmitte -> Mitte Gelenkpaar (r_P)
    ```
 3. Die Werte ändern, deren Abweichung 1 mm oder mehr ist (A6), z. B. mit deinen Mittelwerten:
    ```cpp
-   const float OBERARM_A        = 203.2f;  // gemessen 09.10.
+   const float OBERARM_A        = 201.7f;  // gemessen 09.10.
    const float UNTERARM_B       = 441.5f;  // gemessen 09.10.
    ```
    Die Werte mit weniger als 1 mm Abweichung lässt du stehen. Ersetze aber `PLATZHALTER` durch `geprüft`,
@@ -856,7 +856,7 @@ Zum Abschreiben oder Ausdrucken.
 
 | Maß | Arm 1 | Arm 2 | Arm 3 | Mittelwert | Bericht | Eingetragen? |
 |---|---|---|---|---|---|---|
-| Oberarm `a` (mm) | | | | | 202 | |
+| Oberarm `a` (mm) | | | | | 200,5 | |
 | Unterarm `b`, Stange links (mm) | | | | | 440 | |
 | Unterarm `b`, Stange rechts (mm) | | | | | 440 | |
 | `r_B` Basis (mm) | | | | | 51,1 | |
